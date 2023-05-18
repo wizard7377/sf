@@ -1,6 +1,7 @@
 name: Makefile CI
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "master" ]
   pull_request:
@@ -15,10 +16,10 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: configure
-      run: ./configure
+      run: sudo apt-get install -y autotools-dev autoconf && ./configure
 
     - name: Install dependencies
-      run: make && sudo apt-get install -y autotools-dev autoconf
+      run: make
 
     - name: Run check
       run: make check
