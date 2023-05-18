@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: configure
-      run: sudo apt-get install -y coq
+      run: sudo apt-get install -y coq texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
 
     - name: Install dependencies
       run: make
